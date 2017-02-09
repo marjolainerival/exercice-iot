@@ -62,7 +62,7 @@ class Client implements ClientInterface
     public function __construct(array $config = [])
     {
         if (!isset($config['handler'])) {
-            $config['handler'] = HandlerStack::create();
+            $config['handler'] = vendor\GuzzleHttp\HandlerStack::create();
         }
 
         // Convert the base_uri to a UriInterface
