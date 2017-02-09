@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tomconte/azure-iot-hub-php"
+        }
+    ],
+    "require": {
+        "tomconte/azure-iot-hub": "dev-master",
+        "microsoft/windowsazure": "^0.4"
+    }
+}

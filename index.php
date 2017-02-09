@@ -7,6 +7,13 @@
     <?php
     // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
     require_once 'HTTP/Request2.php';
+    require __DIR__ . '/vendor/autoload.php';
+
+    $host = 'Exo-iot.azure-devices.net';
+    $deviceId = 'Moncul';
+    $deviceKey = 'ONJSBFfbiXA0u3kS/ZMVw2RV9f29OoAeutcHagWvlPQ=';
+
+    $client = new AzureIoTHub\DeviceClient($host, $deviceId, $deviceKey);
 
     $request = new Http_Request2('https://api.cognitive.microsoft.com/bing/v5.0/search');
     $url = $request->getUrl();
@@ -26,18 +33,23 @@
     </form>
 
     <?php
+
+    $research = $_GET['search'];
     $parameters = array(
         // Request parameters
-        'q' => $_GET['search'],
+        'q' => $research,
         'count' => '10',
         'offset' => '0',
         'mkt' => 'en-us',
         'safesearch' => 'Moderate',
     );
 
+    //$client->sendEvent($research);
+
     $url->setQueryVariables($parameters);
 
     $request->setMethod(HTTP_Request2::METHOD_GET);
+    $client->sendEvent($research);
 
     // Request body
     $request->setBody("{body}");
@@ -45,7 +57,9 @@
     try
     {
         $response = $request->send();
+        echo $response->getStatus();
         echo $response->getBody();
+
     }
     catch (HttpException $ex)
     {
