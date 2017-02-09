@@ -7,7 +7,7 @@
     <?php
     // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
     require_once '/pear/HTTP/Request2.php';
-    require __DIR__ . '/vendor/autoload.php';
+    require __DIR__ . 'autoload.php';
 
     $host = 'Exo-iot.azure-devices.net';
     $deviceId = 'Moncul';
