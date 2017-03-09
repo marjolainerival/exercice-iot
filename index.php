@@ -20,7 +20,7 @@
 
     $headers = array(
         // Request headers
-        'Ocp-Apim-Subscription-Key' => '5860f6d64f9d4e5883419b5c11d298ad',
+        'Ocp-Apim-Subscription-Key' => 'YourSubscriptionKey',
     );
 
     $request->setHeader($headers);
