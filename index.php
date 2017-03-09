@@ -9,9 +9,9 @@
     require_once '/pear/HTTP/Request2.php';
     require __DIR__ . '/vendor/autoload.php';
 
-    $host = 'Exo-iot.azure-devices.net';
-    $deviceId = 'Moncul';
-    $deviceKey = 'ONJSBFfbiXA0u3kS/ZMVw2RV9f29OoAeutcHagWvlPQ=';
+    $host = 'Hostname';
+    $deviceId = 'DeviceName';
+    $deviceKey = 'DeviceKey';
 
     $client = new AzureIoTHub\DeviceClient($host, $deviceId, $deviceKey);
 
